@@ -1,0 +1,63 @@
+ou have been tasked with writing an ordering system for a fast food restaurant. To do this, you must write the following three Java classes:
+
+Create a public class Food
+This class represents food items and contains
+
+A constructor: Food(String, int)
+The fields: name, price
+The methods: getPrice(), display()
+where
+
+The fields name and price must both be protected
+The constructor must initialise both fields to their respective argument to the constructor
+The method getPrice() must return the price of the food item
+the method display() must print <price> kr <name> where <price> is the price of the food item and <name> is its name.
+Create a public subclass of Food called Pizza:
+This class represents a type of food item, more precisely a Pizza and contains
+
+A constructor Pizza()
+The field toppings
+the methods addTopping(String) and setName(String)
+where
+
+The field topping must be a List of String and it must be protected
+The constructor should not take any arguments. The constructor of the super class must be given the arguments "Pizza" and 45 (dkk). The list of toppings must be empty for new Pizza objects.
+The method addTopping(String topping) adds topping to the list toppings and increases the price by 10 dkk.
+The method setName(String) must set the name of the pizza through the name field of Food.
+The class must override the display() method of the super class to also print the toppings comma separated with curly brackets around. E.g., a Pizza with the topping "Peperoni", "Pineapple", and "Onion" should be printed as 75 kr Pizza { Pepperoni, Pineapple, Onion } or the empty pizza as 45 kr Pizza { }
+Hint: The following code might give you a hint how to only have comma between and not before or after:
+
+String[] message = { "hi", "how", "are", "you" };
+String separator = "";  // first, no space
+
+for (String word : message) {
+      System.out.print(separator);
+      System.out.print(word);
+      separator = " ";  // after first iteration, a space between the words
+}
+Create an interface CreditCard:
+Put the following in its own file called CreditCard.java:
+
+public interface CreditCard {
+	boolean withdraw(int amount);
+}
+You do not need to upload CreditCard.java with your solution, but if you have the file in your source folder, your code can compile locally.
+
+Create a public class Order:
+The Order class that you are creating represents an order an order of several food items containing
+
+the constructor Order()
+the field ordered
+the methods total(), display(), and payWith(CreditCard)
+where
+
+the field ordered must be a Listof Food, and it must be protected*.
+the constructor must initialise the list of ordered food to be empty
+the addFood(Food food) method must add the given food to the list ordered
+the total() method must return the sum of the price of all food items in the order.
+the payWith(CreditCard card) method must return a boolean. It must attempt to withdraw the current total of the order from the credit card. The method should return the same boolean that withdraw returns, but in case it is false, it must also print "ERROR: Payment failed".
+the display() method must print out all the food ordered, followed by the total for the order. The output must follow this format (for an example order containing a burger, a coke, and a pizza with three toppings):
+65 kr Burger
+25 kr Coke
+75 kr Pizza { Pepperoni, Pineapple, Onion }
+165 kr TOTAL

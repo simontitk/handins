@@ -1,0 +1,27 @@
+In this assignment you will implement a program for exchanging messages between users of a simple messaging app. All methods described in the following should be defined as public and all fields as private. Note that the definition of classes, fields and signature of methods should fully match the description. If you want to add any additional method that is not in the description of the class, these should be defined as private.
+
+Create two classes called Message and User.
+
+In class Message, add the following fields:
+
+receiver of type User: representing the user that receives the message.
+text of type String: representing the text of a message.
+Implement the constructor Message(User receiver, String text) and initialise the fields with the value of corresponding parameters in the constructor.
+
+In class Message, implement methods User getReceiver(), and String getText() that return the value of the corresponding fields.
+
+In class User, add the following fields to the class:
+
+inbox of type Message[]: representing the inbox of a user that has a fixed size.
+messageCount of type int: representing the number of received messages in the inbox.
+Implement the constructor User() and initialise the field inbox with an empty array of size 20, and assign zero to the field messageCount.
+
+Implement the method String addMessage(Message msg), which adds a message msg in the inbox. The message is always added after the last message in the inbox and if the inbox is empty, at the beginning of the inbox. The method returns "Message is added!". (Hint: messageCount shows the number of messages in the inbox. So it should be modified accordingly whenever the number of messages in the inbox changes.)
+
+Modify the addMessage method such that, if the inbox is full, it just returns "Sorry, the inbox is full!". Only if the inbox is not full, it adds the message in the inbox and returns "Message is added!".
+
+Implement the method boolean sendMessage(Message msg) that adds msg in the inbox of the receiver of the message msg. If the message is successfully added in the inbox of the receiver, that is if the inbox of the receiver is not full, the method returns true. Otherwise, it returns false. (Hint: use the addMessage method as a helper method.)
+
+Implement a method String readMessage() such that, if the inbox is empty, the method returns "There is no message to read!". Otherwise, it returns the value of text field of the first message in the inbox, the message at index 0, and deletes the message from inbox. (Hint: deleting the message involves decreasing the value of messageCount. And the remaining messages in the inbox, if any, should be shifted one position to the left. For example, message at index 1 moves to index 0, message at index 2 moves to index 1 and so on)
+
+Files to submit: User.java, Message.java

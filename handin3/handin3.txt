@@ -1,0 +1,28 @@
+This exercise is about modelling a small forest of trees. Each tree has an age, a height, and also a growth rate. Note the definition of class, fields, and signature of the methods should match the description (if the description does not mention a returned value by a method, it means the method does not return anything). Furthermore, if you want to add additional methods that are not in the description, they should be declared as private. Implement the forest of trees as follows:
+
+Create a class Tree
+
+Add the following three private fields to the Tree class:
+
+age of type int: the tree's age in years.
+height of type double: the tree's height in meters.
+growthRate of type double: the tree's growth per year as a percentage.
+Create a constructor for the class Tree(double growthRate), taking a single parameter of type double. The constructor must set the initial height to be 0.12 meters, and the age to be 1 year, and the growth rate to be the parameter given to the constructor.
+
+Create a public toString() method that returns a String with the format: "Tree(age = <age>, height = <height>)", where <age> and <height> are substituted with what the value of the corresponding fields are. For example, if value of age is 1, and value of height is 0.12 it returns "Tree(age = 1, height = 0.12)"
+
+Create a public method growOneYear(), which increases the age by one, and increases the height of the tree according to the formula height * (1 + growthRate / 100).
+
+Modify the growOneYear() method such that a tree will stop growing once it reaches a height of 14 meters.
+
+Create a class Forest
+
+Add a private field trees that stores an ArrayList of Tree
+
+Create a constructor for the class Forest(). The constructor must initialize the field trees with an empty list.
+
+Create a public method addTree(int growthRate) that adds a Tree with growth rate growthRate to the trees list.
+
+Create a public toString() method that returns a String with the format: "Forest(Tree(age = 1, height = 0.12)Tree(age = 1, height = 0.12)Tree(age = 1, height = 0.12))", where the data reflects the actual state of each tree in the forest (the string should include the state of all trees in the forest. In this example there are three trees in the forest and all have age 1 and height 0.12).
+
+Create a growOneYear() method that causes all the trees in the forrest to grow by one year.
